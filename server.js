@@ -147,7 +147,7 @@ app.post('/thanks', (req, res) => {
                     //your spreadsheet
                     spreadsheetId: mySpreadsheetId,
                     //The range in A1 notation of where you want to append, in this example it is using the current height of your sheet from the previous call to determine where to put the next row
-                    range: `Sheet1!A${existingRowsLength + 1}`,
+                    range: "Sheet1!A:D",
                     valueInputOption: "USER_ENTERED",
                     //This is the value of the variable resourse above that will be populated with the data you want to append to your sheet
                     resource
@@ -158,8 +158,7 @@ app.post('/thanks', (req, res) => {
                     } else {
                         console.log(`Result: `, result);
                         //This else statement will only be getting fired if you connected to the API correctly, posted your data and got a response back. This is the scenario where you will want to then forward your user on to the thanks page. 
-                        res.send('Successful! Thank you ', { firstName })
-                    }
+                        res.render('thanks', { contact: req.body})                    }
                 })
     
             });
