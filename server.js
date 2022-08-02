@@ -116,9 +116,9 @@ app.post('/thanks', (req, res) => {
             sheets.spreadsheets.values.get({
                 spreadsheetId: mySpreadsheetId,
                 range: 'Sheet1',
-            }, (err, res) => {
+            }, (err, response) => {
                 if (err) return console.log('The API returned an error: ' + err);
-                const rows = res.data.values;
+                const rows = response.data.values;
                 //This is setting a variable that is the current number or rows in your sheet, this will be useful so that you can append data on the next row as you need to manually specify which row you want data appended to.
                 let existingRowsLength = rows.length;
                 if (rows.length) {
@@ -147,7 +147,7 @@ app.post('/thanks', (req, res) => {
                     //your spreadsheet
                     spreadsheetId: mySpreadsheetId,
                     //The range in A1 notation of where you want to append, in this example it is using the current height of your sheet from the previous call to determine where to put the next row
-                    range: "Sheet1!A:D",
+                    range: `Sheet1!A${existingRowsLength + 1}`,
                     valueInputOption: "USER_ENTERED",
                     //This is the value of the variable resourse above that will be populated with the data you want to append to your sheet
                     resource
