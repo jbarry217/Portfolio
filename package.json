@@ -1,0 +1,29 @@
+{
+  "name": "node200-ejs-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbarry217/Portfolio.git"
+  },
+  "author": "Jennifer Barry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbarry217/Portfolio/issues"
+  },
+  "homepage": "https://github.com/jbarry217/Portfolio#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "googleapis": "^39.2.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
