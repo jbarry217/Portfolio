@@ -1,10 +1,45 @@
 <html> 
     <head>
-        <title>Jen Thanks You!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' />
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@0;1&family=Roboto+Slab&display=swap" rel="stylesheet">  
+            <title>Jen Thanks You!</title>
     </head>
+    <style>
+        body {
+            background: #e8cbc0; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #e8cbc0, #636fa4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+            color: whitesmoke;
+        }
+
+        .thanks {
+            font-family: 'Roboto Slab', serif;
+            color: whitesmoke;
+            font-weight: 400;
+            font-size: 50px;
+        }
+        p {
+            font-family: 'Roboto Slab', serif;
+            color: rgb(0, 0, 0);
+            font-weight: 400;
+            font-size: 25px;
+        }
+
+    </style>
     <body>
-        <div>
-            Thank you, <%= contact.firstName %> <%= contact.lastName %>
+        <%- include('header') %>
+        <div class = "container">
+            <div class="col-md-12 mt-5 pt-5">
+
+                    <div class="thanks text-center align-middle">
+                    Thank you, <%= contact.firstName %> <%= contact.lastName %>
+                    </div>
+                    <p class="text-center align-middle my-5">Jen will contact you shortly.</p>
+            </div>
         </div>
+
     </body>
 </html>

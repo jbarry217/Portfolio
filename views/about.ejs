@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' />
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@0;1&family=Roboto+Slab&display=swap" rel="stylesheet">  
+    </head>
+    <style>
+        body {
+            background: #e8cbc0; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #e8cbc0, #636fa4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+            color: whitesmoke;
+        }
+
+        h2 {
+            font-family: 'Roboto Slab', serif;
+            color: whitesmoke;
+            font-weight: 400;
+            font-size: 50px;
+        }
+        h3{
+            font-family: 'Libre Bodoni', serif;
+            font-weight: 300;
+            font-size: 22px;
+            color: black;
+        }
+        p {
+            font-family: 'Libre Bodoni', serif;
+            font-weight: 300;
+            color: black;
+        }
+
+    </style>
+
+    <body>
+        <%- include('header') %>
+
+     <div class = "container">
+        <div class="row">
+        <div class="col-md-6 mt-1 pt-2">
+
+            <h2 class="text-center mt-4 mb-5"> JEN BARRY </h2>
+            <h3 class="text-center font-bold mt-4"> EDUCATOR TURNED DEVELOPER </h3>
+            <p class="text-center my-3 "> 
+            After spending over seven years teaching English as a Second Language both abroad in Spain and in the United States, I left the education world to develop my skills as a 
+            software engineer apprentice. Although I am learning a full-stack curriculum, I am more front-end leaning. I am looking for a position where I can work with a team to 
+            collaborate and build together. 
+            </p>
+            <p class="text-center my-3"> 
+            When I am not coding, you can find me swimming, hiking, and camping with my husband and dog, Dusty. I really enjoy traveling to new places and trying new foods. I also love reading and try to read at least 
+            30 books every year. 
+            </p>
+
+
+            <h3 class="text-center font-bold mt-5"> SKILLS </h3>
+            <p class="text-center my-3"> 
+                The technologies that I have used include <font color="#f5f5f5">React, Node.js, Express, SQL, MongoDB, </font> and <font color="#f5f5f5">Redis</font>.</p>
+                <p class="text-center my-3"> I am also a ServiceNow Certified Systems Administrator.</p>
+     </div>
+     <div class="col-md-6 mt-4" id='image-holder'>
+        <img src="../dusty.jpg" class="rounded-circle mx-auto mt-3 mb-5 d-block" height="300px" width="300px" alt="Jen Headshot"
+        />
+        <img src="../ski.jpg" class="rounded-circle my-3 mx-auto d-block" height="250px" width="300px" alt="Jen Headshot"
+        />
+    </div>
+
+</div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
+</html>

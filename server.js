@@ -12,7 +12,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/profile', profile)
-
+app.use(express.static('images'))
 app.set('views', './views');
 
 app.set('view engine', 'ejs');
@@ -23,6 +23,14 @@ app.get('/', (req, res ) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact');
+    });
+
+app.get('/about', (req, res) => {
+    res.render('about');
+     });
+
+app.get('/projects', (req, res) => {
+    res.render('projects');
     });
     
 app.post('/thanks', (req, res) => {

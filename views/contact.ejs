@@ -2,23 +2,88 @@
     <head>
         <title>Contact Jen</title>
     </head>
+    <!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' />
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@0;1&family=Roboto+Slab&display=swap" rel="stylesheet">    </head>
+    <style>
+        body {
+            background: #e8cbc0; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #e8cbc0, #636fa4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+            color: whitesmoke;
+        }
+
+
+    </style>
+
     <body>
-        <div>
-            <form action="/thanks" method="POST">
-                <label for="firstName">First Name:</label>
-                <input id="firstName" name="firstName" type="text">
+        <%- include('header') %>
 
-                <label for="lastName">Last Name:</label>
-                <input id="lastName" name="lastName" type="text">
+ <div class= "container"></div>       
+            <div class="row mt-5 mx-5">
 
-                <label for="email">Email:</label>
-                <input id="email" name="email" type="text">
+                <div class="col-xs-12 col-md-6">
+                <h2> CONTACT </h2>
+            <br>
+            <div class='form-group' id='main'>
+                <form action="/thanks" name="googleSheet" method="POST">
+                    <div class="form-row form-group">
+                        <div class='col-lg-8'>
+                            <label for="firstName">First Name:</label>
+                            <input id="firstName" class='form-control' name="firstName" type="text">
+                        </div>
+                        <div class="col-lg-8 mt-3">
+                            <label for="lastName">Last Name:</label>
+                            <input id="lastName" class='form-control' name="lastName" type="text">
+                        </div>
+                    </div>
+                <div class="form-group col-lg-8 mt-3">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" class='form-control' type="text">
+                </div>
 
-                <label for="message">Message:</label>
-                <input id="message" name="message" type="textarea">
+                <div class="form-group col-lg-8 mt-3">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" class='form-control' type="text"></textarea>
+                </div>
 
-                <input type="submit">
+                <input type="submit" class="btn btn-outline-light my-4">
             </form>
+        </div>
+    </div>
+        <br>
+
+        <div class="col-xs-12 col-md-6">
+            <h2> SOCIAL </h2>
+                <div class='form-group col-lg-12' id='main'>
+                    <div class="row mt-5 mb-4">
+                        <a href="https://github.com/jbarry217" target="_blank">
+                            <img src="../github.png" alt="Github Logo" height="75" width="75">
+                    </a>
+                    </div>
+
+                    <div class="row">
+                        <a href="http://www.linkedin.com/in/jenniferlynnebarry" target="_blank">
+                            <img src="../linkedin.png" alt="LinkedIn Logo" height="75" width="75">
+                    </a>
+                    </div>
+
+                    <div class="row my-4">
+                        <a href="mailto: Jenniferlynnebarry@gmail.com" target="_blank">
+                            <img src="../gmail.png" alt="gmail Logo" height="75" width="75">
+                    </a>
+                    </div>
+
+                </div>
+        </div>
+
+        </div>
         </div>
     </body>
 </html>
