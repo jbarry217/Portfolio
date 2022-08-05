@@ -6,8 +6,6 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 
-require('dotenv').config();
-const api_key = process.env.API_KEY;
 const app = express();
 
 app.use(morgan('dev'))
