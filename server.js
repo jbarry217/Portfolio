@@ -5,6 +5,7 @@ var profile = require('./profile');
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -180,6 +181,6 @@ app.get('/sheets-auth', (req, res) => {
     res.status(200).send("Sheets auth connected to this route");
 });
 
-app.listen(8080, () => {
-    console.log('listening at http://localhost:8080');
+app.listen(PORT, () => {
+    console.log(`listening at ${PORT}`);
 });
