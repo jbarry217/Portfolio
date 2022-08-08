@@ -1,48 +1,30 @@
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+  heroku: circleci/heroku@1.2.6
+
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/node:16.14.2
-
-    working_directory: ~/repo
-
+      - image: cimg/node:16.14.2
     steps:
       - checkout
+      - node/install:
+        node-version: '16.14.2'
+      - node/install-packages
+  deploy:
+    docker:
+      - image: cimg/node:16.14.2
+    steps:
+      - heroku/deploy-via-git:
+          api-key: $HEROKU_API_KEY
+          app-name: jennifer-barry-portfolio
+          branch: main
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: yarn install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests! ppp, yarn 
-      - run: yarn test
-    deploy:
-      docker:
-        - image: circleci/node:8.11
-      steps:
-        - checkout
-        - run:
-            name: Deploy Main to Heroku
-            command: |
-              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
-    workflows:
-      version: 2
-      build-deploy:
-        jobs:
-          - build
-          - deploy:
-              requires:
-                - build
-              filters:
-              branches:
-                  only: main
+workflow:
+  version: 2.1
+  build_deploy:
+    jobs:
+      - build
+      - deploy
